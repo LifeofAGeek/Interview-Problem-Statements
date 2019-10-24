@@ -1,3 +1,4 @@
+
 def GreaterNumber(num):
     x=str(num)
     l=len(str(num))
@@ -8,15 +9,19 @@ def GreaterNumber(num):
         if lis[j]>lis[j-1]:
             lis[j-1],lis[l-1]=lis[l-1],lis[j-1]
             break
+    if j==1:
+        print("not possible")
     else:
-        x="not possible"
-    if x=="not possible":
-        print("Sorry, there is no higher number!")
-    else:    
+        n=sorted(lis[j:])
+        for k in range(0,len(n)):
+          if lis[j-1]<n[k]:
+            lis[j],n[k]=n[k],lis[j-1]
+          break
+        lis=lis[0:j]+n[0:]    
         x=0
-        for k in range(l):
+        for k in range(0,len(lis)):
             x=x*10+lis[k]
         print("Next higher number is:",x)
         
-GreaterNumber(453876)
-Next higher number is: 456873
+GreaterNumber(23623)
+Next higher number is: 23632
