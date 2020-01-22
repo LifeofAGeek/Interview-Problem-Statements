@@ -10,4 +10,4 @@ def canStop(runway,speed,i=0):
             return "Will pass the runway"
     return("Cannot pass the runway")
     
-canStop([True,False,True,True,True,True,False,False,True],3)
+canStop([True,False,True,True,False,True,False,False,True],3)
