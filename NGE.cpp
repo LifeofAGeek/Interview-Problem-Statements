@@ -17,9 +17,39 @@ void NGE_On2(int arr[], int n)
     }
 }
 
+void printNGE(int arr[], int n) {
+  stack < int > s;
+
+  s.push(arr[0]);
+
+  for (int i = 1; i < n; i++) {
+
+    if (s.empty()) {
+      s.push(arr[i]);
+      continue;
+    }
+
+    while (s.empty() == false && s.top() < arr[i])
+    {
+        cout << s.top() << " --> " << arr[i] << endl;
+        s.pop();
+    }
+
+    s.push(arr[i]);
+  }
+
+  while (s.empty() == false) {
+    cout << s.top() << " --> " << -1 << endl;
+    s.pop();
+  }
+}
+
 int main()
 {
     int a[]={3, 2, 5, 6, 9, 8};
-    int n=sizeof(a)/sizeof(a[0]);
-    NGE_On2(a,n);
+    int b[]={11, 13, 21, 3};
+    int n1=sizeof(a)/sizeof(a[0]);
+    int n2=sizeof(b)/sizeof(b[0]);
+    NGE_On2(a,n1);
+    printNGE(b,n2);
 }
