@@ -16,3 +16,10 @@ void NGE_On2(int arr[], int n)
         cout<<arr[i]<<"-->"<<next<<endl;
     }
 }
+
+int main()
+{
+    int a[]={3, 2, 5, 6, 9, 8};
+    int n=sizeof(a)/sizeof(a[0]);
+    NGE_On2(a,n);
+}
