@@ -9,9 +9,9 @@ void NGE_On2(int arr[], int n)
         next=-1;
         for(int j=i+1;j<n;j++)
         {
-            if(arr[j]>arr[i])
+            if(arr[j]>arr[i]){
                 next=arr[j];
-                break;
+                break;}
         }
         cout<<arr[i]<<"-->"<<next<<endl;
     }
