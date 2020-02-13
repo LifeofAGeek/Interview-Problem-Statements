@@ -47,7 +47,7 @@ void printNGE(int arr[], int n) {
 int main()
 {
     int a[]={3, 2, 5, 6, 9, 8};
-    int b[]={11, 13, 21, 3};
+    int b[]={11, 13, 21, 4};
     int n1=sizeof(a)/sizeof(a[0]);
     int n2=sizeof(b)/sizeof(b[0]);
     NGE_On2(a,n1);
