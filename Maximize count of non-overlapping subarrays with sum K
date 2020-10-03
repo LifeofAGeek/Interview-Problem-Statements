@@ -1,0 +1,54 @@
+import java.util.*; 
+class solve{ 
+    // Function to count the maximum 
+    // number of subarrays with sum K 
+    static int CtSubarr(int[] arr,  
+                        int N, int K) 
+    { 
+        // Stores all the distinct 
+        // prefixSums obtained 
+        Set<Integer> st = new HashSet<Integer>(); 
+  
+        // Stores the prefix sum 
+        // of the current subarray 
+        int prefixSum = 0; 
+  
+        st.add(prefixSum); 
+  
+        // Stores the count of 
+        // subarrays with sum K 
+        int res = 0; 
+  
+        for (int i = 0; i < N; i++)  
+        { 
+            prefixSum += arr[i]; 
+  
+            // If a subarray with sum K 
+            // is already found 
+            if (st.contains(prefixSum - K))  
+            { 
+                // Increase count 
+                res += 1; 
+  
+                // Reset prefix sum 
+                prefixSum = 0; 
+  
+                // Clear the set 
+                st.clear(); 
+                st.add(0); 
+            } 
+  
+            // Insert the prefix sum 
+            st.add(prefixSum); 
+        } 
+        return res; 
+    } 
+  
+    public static void main(String[] args) 
+    { 
+        int arr[] = {-2, 6, 6, 3, 5, 4, 1, 2, 8}; 
+        int N = arr.length; 
+        int K = 10; 
+        System.out.println(CtSubarr(arr, N, K)); 
+    } 
+} 
